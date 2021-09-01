@@ -3,11 +3,11 @@ using DomainEvent.Infrastructure.Interfaces;
 
 namespace DomainEvent.Domain.Events
 {
-    public class WidgetDidSomethingDomainEvent : IDomainEvent
+    public class WidgetDidSomethingElseDomainEvent : IDomainEvent
     {
         public Widget Widget { get; set; }
 
-        public WidgetDidSomethingDomainEvent()
+        public WidgetDidSomethingElseDomainEvent()
         {
 
         }

@@ -50,7 +50,8 @@ namespace DomainEvent.Infrastructure
             if (_serviceProvider != null)
             {
                 using (var scope = _serviceProvider.CreateScope())
-                { 
+                {
+                    //TODO: Should this be Async?
                     foreach (var handler in scope.ServiceProvider.GetServices<IHandles<TEvent>>())
                     {
                         handler.Handle(args);

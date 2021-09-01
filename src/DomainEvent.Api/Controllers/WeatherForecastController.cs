@@ -27,7 +27,7 @@ namespace DomainEvent.Api.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            var widget = new Widget();
+            var widget = new Widget(1, "Widget 1");
             widget.DoSomething();
 
             var rng = new Random();

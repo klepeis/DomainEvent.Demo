@@ -1,5 +1,5 @@
 using DomainEvent.Domain.Events;
-using DomainEvent.Domain.Handler;
+using DomainEvent.Domain.Handlers;
 using DomainEvent.Infrastructure;
 using DomainEvent.Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -25,7 +25,14 @@ namespace DomainEvent.Api
             services.AddControllers();
 
             // Register event and handler for event.
+            //TODO: Use "When" Syntax for handlers. ie -> ValidateWidgetWhenReceived
+
+            //Register multiple handlers for the same domain event.
             services.AddScoped<IHandles<WidgetDidSomethingDomainEvent>, WidgetDidSomethingDomainEventHandler>();
+            services.AddScoped<IHandles<WidgetDidSomethingDomainEvent>, WidgetDidSomethingDomainSecondEventHandler>();
+
+            //Register single handler for a domain event.
+            services.AddScoped<IHandles<WidgetDidSomethingElseDomainEvent>, WidgetDidSomethingElseDomainEventHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
