@@ -6,8 +6,7 @@ using System.Collections.Generic;
 
 namespace DomainEvent.Infrastructure
 {
-    //https://udidahan.com/2009/06/14/domain-events-salvation/
-
+   
     public static class DomainEvents
     {
         [ThreadStatic]
